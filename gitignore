@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.env/
+
+# Data files
+data/raw/
+data/processed/
+*.pdf
+
+# Generated outputs
+results/
+generated_questions.json
+
+# OS
+.DS_Store

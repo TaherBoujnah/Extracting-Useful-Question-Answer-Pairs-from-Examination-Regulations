@@ -1,0 +1,44 @@
+[
+ {
+  "question": "Wie viele Prüfungsversuche habe ich pro Modul?",
+  "answer": "Für Modulprüfungen sind in der Regel drei Prüfungsversuche vorgesehen. Besteht ein Modul auch nach dem dritten Versuch nicht, gilt es als endgültig nicht bestanden."
+},
+{
+  "question": "Gibt es Ausnahmen, die mehr als drei Prüfungsversuche erlauben?",
+  "answer": "In begründeten Ausnahmefällen kann auf Antrag beim Prüfungsausschuss eine zusätzliche Prüfungswiederholung genehmigt werden. Über den Antrag entscheidet der Prüfungsausschuss nach pflichtgemäßem Ermessen."
+},
+{
+  "question": "Unter welchen Voraussetzungen kann ein zusätzlicher Prüfungsversuch gewährt werden?",
+  "answer": "Ein zusätzlicher Prüfungsversuch kann auf Antrag gewährt werden, wenn besondere Gründe vorliegen. Der Antrag ist an den Prüfungsausschuss zu richten und muss entsprechend begründet sein."
+},
+{
+  "question": "Gibt es eine Härtefallregelung bei Prüfungen?",
+  "answer": "In besonderen Härtefällen kann der Prüfungsausschuss Ausnahmen von den Regelungen der Prüfungsordnung zulassen, sofern die Gründe ausreichend dargelegt und nachgewiesen werden."
+},
+{
+  "question": "Welche Voraussetzungen gelten für die Anmeldung der Bachelorarbeit?",
+  "answer": "Zur Anmeldung der Bachelorarbeit müssen eine bestimmte Mindestanzahl an Leistungspunkten erworben worden sein. Der Antrag auf Zulassung darf erst nach Erfüllung dieser Voraussetzungen gestellt werden."
+},
+{
+  "question": "Wie lange ist die Bearbeitungszeit der Bachelorarbeit?",
+  "answer": "Die Bachelorarbeit muss innerhalb einer festgelegten Bearbeitungszeit abgeschlossen werden. Diese beträgt in der Regel drei Monate ab Ausgabe des Themas."
+},
+{
+  "question": "Kann die Bearbeitungszeit der Bachelorarbeit verlängert werden?",
+  "answer": "In begründeten Ausnahmefällen kann der Prüfungsausschuss auf Antrag eine Verlängerung der Bearbeitungszeit der Bachelorarbeit gewähren. Der Antrag muss rechtzeitig vor Ablauf der regulären Frist gestellt werden."
+},
+{
+  "question": "Wann muss eine Verlängerung der Bearbeitungszeit beantragt werden?",
+  "answer": "Der Antrag auf Verlängerung der Bearbeitungszeit der Bachelorarbeit muss spätestens zwei Wochen vor Ablauf der regulären Bearbeitungsfrist gestellt werden."
+},
+{
+  "question": "Wer entscheidet über die Anerkennung von Studien- und Prüfungsleistungen?",
+  "answer": "Über die Anerkennung von Studien- und Prüfungsleistungen entscheidet der zuständige Prüfungsausschuss auf Antrag der oder des Studierenden."
+},
+{
+  "question": "Gibt es eine Anwesenheitspflicht in Lehrveranstaltungen?",
+  "answer": "Eine Anwesenheitspflicht kann vorgesehen sein, wenn sie für das Erreichen des Lernziels erforderlich ist. Die konkrete Ausgestaltung wird in der jeweiligen Lehrveranstaltung bekannt gegeben."
+}
+
+]
+
