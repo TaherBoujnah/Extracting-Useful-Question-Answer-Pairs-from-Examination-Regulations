@@ -1,8 +1,0 @@
-body { font-family: Arial, sans-serif; background:#f6f6f6; }
-.container { width: 700px; margin: 30px auto; background:white; padding:20px; border-radius:10px; }
-#chat { height: 420px; overflow:auto; border:1px solid #ddd; padding:10px; margin:15px 0; background:#fafafa; }
-.user { background:#dfefff; padding:10px; margin:8px; border-radius:10px; white-space:pre-wrap; }
-.bot { background:#e9ffe5; padding:10px; margin:8px; border-radius:10px; white-space:pre-wrap; }
-.row { display:flex; gap:10px; }
-input { flex:1; padding:10px; }
-button { padding:10px 16px; }
