@@ -1,5 +1,3 @@
---- START OF README.md ---
-
 # Extracting Useful Question–Answer Pairs from Examination Regulations
 ### Bachelor Thesis Project – NLP & LLM Applications
 
