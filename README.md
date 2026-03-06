@@ -1,239 +1,67 @@
-Extracting Useful Question–Answer Pairs from Examination Regulations
+--- START OF README.md ---
 
-Bachelor Thesis Project – NLP & LLM Applications
+# Extracting Useful Question–Answer Pairs from Examination Regulations
+### Bachelor Thesis Project – NLP & LLM Applications
 
-This project builds a pipeline for automatically extracting useful Question–Answer (QA) pairs from university examination regulations and deploying them through a retrieval-based chatbot system.
+This project implements an automated pipeline to transform lengthy, complex university examination regulations into structured, searchable Question–Answer (QA) pairs. The system is designed to help students navigate academic policies through a retrieval-based chatbot interface.
 
-The goal is to transform long and complex regulation documents into clear, searchable FAQ-style information for students.
+---
 
-Overview
+## 🚀 Project Overview
+University examination regulations contain critical information about exams, grading, and retakes, but are often difficult to navigate. This project provides a complete NLP pipeline to:
+* **Process** regulation documents and extract structured segments.
+* **Generate** candidate QA pairs using local Large Language Models (LLMs) like Gemma, Llama, and Qwen.
+* **Filter and evaluate** outputs against a manually curated "gold" dataset.
+* **Deploy** an interactive FAQ assistant using Chainlit.
 
-University examination regulations contain important information about exams, grading rules, retakes, and academic policies. However, these documents are often lengthy and difficult to navigate.
+---
 
-This project builds a complete NLP pipeline that:
+## 🏗 Pipeline Architecture
+The system follows a modular multi-stage pipeline:
+1. **Preprocessing:** Normalizes formatting and converts documents into structured Markdown.
+2. **Chunking:** Splits regulations into meaningful sections while preserving metadata like section names and page numbers.
+3. **QA Generation:** Uses local LLMs with strategies like `Hybrid` and `Slow/HQ` to create FAQ pairs.
+4. **Retrieval:** Embeds FAQ questions and uses cosine similarity to match user queries.
+5. **Interface:** An interactive assistant that retrieves answers based on semantic similarity.
 
-processes regulation documents
+---
 
-extracts structured regulation segments
+## 📊 Evaluation & Results
+The project evaluates several models to find the best balance between accuracy and generation speed.
 
-generates candidate QA pairs using local LLMs
+### Model Performance Summary (10 Seeds)
+Based on experimental data, **Qwen 2.5 (7B)** using the **Hybrid** strategy achieved the highest success rate.
 
-filters and evaluates generated outputs
+| Model & Strategy | Accuracy Success Rate | Coverage | Hallucination Rate | Runtime (sec) |
+| :--- | :---: | :---: | :---: | :---: |
+| **Qwen 2.5 7B (Hybrid)** | **41.67%** | **31.36%** | 58.51% | 396.67 |
+| Llama 3.1 8B (Slow HQ) | 30.00% | 26.27% | 63.64% | 366.72 |
+| Gemma 3 4B (Hybrid) | 28.33% | 27.12% | 75.21% | 380.85 |
 
-builds an embedding-based retrieval system
+> *Source: data/plots/10seeds/summary_table.json*
 
-serves answers through a chatbot interface
+### Visualizations
+Below are the key visualizations generated during the research phase:
 
-The repository includes both:
+**Clustering of QA Pairs**
+![Cluster Overview](data/plots/cluster_circle.png)
 
-the research pipeline used in the thesis
+**Model Accuracy Comparison**
+![Accuracy Success Rate](data/plots/10seeds/accuracy_success_rate.png)
 
-a working FAQ chatbot prototype
+---
 
-Pipeline
-
-The system follows a multi-stage pipeline:
-
-Document preprocessing
-
-Extract regulation text
-
-Normalize formatting
-
-Convert documents into structured markdown
-
-Regulation chunking
-
-Split regulations into meaningful sections
-
-Preserve metadata such as section name, page numbers, and degree level
-
-Question–Answer generation
-
-Generate candidate QA pairs from regulation chunks using local LLMs
-
-Filtering and selection
-
-Remove duplicates and low-quality QA pairs
-
-Select the most relevant ones
-
-Evaluation
-
-Compare generated QA pairs with a manually curated gold dataset
-
-Retrieval system
-
-Create embeddings for generated FAQ questions
-
-Retrieve answers using semantic similarity
-
-Chatbot interface
-
-Provide an interactive FAQ assistant using Chainlit
-
-Repository Structure
+## 📁 Repository Structure
+```text
 .
-├── backend/
-│   ├── api.py
-│   ├── chunk_examregs.py
-│   ├── config.py
-│   ├── indexer.py
-│   ├── evaluation/
-│   ├── qa/
-│   ├── retrieval/
-│   └── unused_codes/
-│
-├── frontend/
-│   └── chatbot_chainlit.py
-│
-├── data/
-│   ├── eval/
-│   ├── final/
-│   ├── generated/
-│   ├── gold/
-│   ├── plots/
-│   ├── ALL_Informatik_Exam_Regulations.md
-│   ├── chunks.jsonl
-│   ├── embeddings.npy
-│   ├── embeddings_meta.json
-│   └── exam_regulations.pdf
-│
-├── .chainlit/
-├── chainlit.md
-└── README.md
-Models Explored
-
-The project evaluates several local LLMs for QA generation:
-
-Gemma 3 (4B)
-
-Llama 3.1 (8B)
-
-Qwen 2.5 (7B)
-
-Generated outputs and evaluation results for these models are included in the repository.
-
-Data Artifacts
-
-The repository contains several datasets produced during the thesis.
-
-Generated QA datasets
-Located in data/generated/
-
-These contain model outputs and generation metadata.
-
-Gold dataset
-A manually curated reference dataset used for evaluation.
-
-data/gold/gold.json
-
-Final selected QA dataset
-
-data/final/
-
-This contains the final selected FAQ pairs used by the chatbot.
-
-Visualizations
-
-The project includes visual analysis of generated QA clusters.
-
-Cluster Overview
-
-
-LDA Selected Cluster
-
-
-PCA + KMeans Cluster
-
-
-Example Generated QA Pair
-
-Question
-
-How many exam attempts are allowed per module?
-
-Answer
-
-Students typically have three attempts to pass a module examination.
-If the module is failed after the final attempt, it is considered definitively failed.
-
-Installation
-
-Clone the repository:
-
-git clone https://github.com/TaherBoujnah/Extracting-Useful-Question-Answer-Pairs-from-Examination-Regulations.git
-
-cd Extracting-Useful-Question-Answer-Pairs-from-Examination-Regulations
-
-Install dependencies:
-
-pip install -r backend/requirements.txt
-
-Running the Backend API
-
-Start the FastAPI service:
-
-uvicorn backend.api:app --reload
-
-Running the Chatbot
-
-Launch the Chainlit interface:
-
-chainlit run frontend/chatbot_chainlit.py
-
-Then open the local interface in your browser.
-
-Retrieval System
-
-The chatbot uses semantic retrieval to match user questions with generated FAQ entries.
-
-Pipeline:
-
-Embed FAQ questions
-
-Compute similarity with the user query
-
-Return the most relevant answer
-
-Embeddings and metadata are stored in:
-
-data/embeddings.npy
-data/embeddings_meta.json
-
-Thesis Contribution
-
-This thesis demonstrates how large language models can be used to transform long academic regulation documents into structured FAQ knowledge bases.
-
-The project combines:
-
-document preprocessing
-
-LLM-based QA generation
-
-dataset evaluation
-
-semantic retrieval
-
-chatbot deployment
-
-into a complete end-to-end system.
-
-Future Work
-
-Possible extensions include:
-
-improving QA filtering methods
-
-adding multilingual support
-
-integrating stronger retrieval models
-
-extending the system to other faculties or universities
-
-improving hallucination detection
-
-Author
-
-Taher Boujnah
-Bachelor Thesis – Natural Language Processing
+├── backend/            # Core logic (API, Indexer, Generation)
+│   ├── qa/             # Hybrid and Slow/HQ generation scripts
+│   ├── evaluation/     # Metrics and evaluation scripts
+│   └── retrieval/      # Embedding-based retrieval logic
+├── frontend/           # Chatbot interface (Chainlit)
+├── data/               
+│   ├── gold/           # Human-curated reference dataset
+│   ├── final/          # Final selected FAQ pairs
+│   ├── generated/      # Raw LLM outputs
+│   └── plots/          # Performance and cluster visualizations
+└── requirements.txt    # Project dependencies
