@@ -1,6 +1,16 @@
 # Extracting Useful Question–Answer Pairs from Examination Regulations
 ### Bachelor Thesis Project – NLP & LLM Applications
 
+---
+
+## 🎓 Thesis Context
+
+This project was developed as a **Bachelor Thesis** focused on **Natural Language Processing (NLP)** and **LLM applications**. It demonstrates how automated pipelines can transform dense academic regulations into user-friendly knowledge bases.
+
+**Author:** Taher Boujnah
+
+---
+
 This project implements an automated pipeline to transform lengthy, complex university examination regulations into structured, searchable Question–Answer (QA) pairs. The system is designed to help students navigate academic policies through a retrieval-based chatbot interface.
 
 ---
