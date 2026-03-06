@@ -63,3 +63,10 @@ Below are the key visualizations generated during the research phase:
 │   ├── generated/      # Raw LLM outputs
 │   └── plots/          # Performance and cluster visualizations
 └── requirements.txt    # Project dependencies
+
+
+## 🎓 Thesis Context
+
+This project was developed as a **Bachelor Thesis** focused on **Natural Language Processing (NLP)** and **LLM applications**. It demonstrates how automated pipelines can transform dense academic regulations into user-friendly knowledge bases.
+
+**Author:** Taher Boujnah
