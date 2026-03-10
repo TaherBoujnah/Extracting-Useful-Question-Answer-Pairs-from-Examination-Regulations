@@ -1,5 +1,17 @@
 [
   {
+    "label": "Gold Standard",
+    "file": "data\\eval\\scores__gold.json",
+    "accuracy_success_rate": 0.1,
+    "coverage": 0.0678,
+    "hallucination_rate": 0.7043,
+    "avg_retrieval_cosine": 0.2746,
+    "avg_token_f1": 0.0973,
+    "roundtrip_ok_rate": null,
+    "avg_roundtrip_f1": null,
+    "generation_runtime_seconds": null
+  },
+  {
     "label": "hybrid gemma3_4b (10 seeds)",
     "file": "data\\eval\\scores__hybrid__gemma3_4b__10seeds.json",
     "accuracy_success_rate": 0.2833,
